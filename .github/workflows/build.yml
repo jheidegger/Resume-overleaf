@@ -15,8 +15,9 @@ jobs:
         with:
           root_file: Jonathan_Heidegger_Resume.tex
           latexmk_use_xelatex: true
-      - name: Upload PDF file
-        uses: actions/upload-artifact@v3
-        with:
-          name: PDF
-          path: Jonathan_Heidegger_Resume.pdf
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with: 
+          commit-message: pdflatex build
+          branch: pdf
+          title: '[CI] pdflatex build'
