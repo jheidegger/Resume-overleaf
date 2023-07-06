@@ -1,0 +1,26 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install texlive
+        run: sudo apt install texlive-base 
+      - name: Install texlive-latex-extra
+        run: sudo apt-get install texlive-latex-extra texlive-fonts-extra texlive-xetex 
+      - name: Build pdf
+        run: xelatex Jonathan_Heidegger_Resume.tex 
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with: 
+          commit-message: pdflatex build
+          branch: master
+          title: '[CI] pdflatex build'
