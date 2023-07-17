@@ -111,16 +111,17 @@
     % \addcontentsline{toc}{chapter}{\@name}
     \begin{tabularx}{\textwidth}{Xr}{
         \begin{tabular}[c]{l}
-            \fontsize{28}{30}\selectfont{\color{navyblue}{\textbf{\@name}}}
+            \fontsize{35}{5}\selectfont{\color{navyblue}{\textbf{\@name}}}
             \ifx\empty\@title\empty\else
-                \\ \textit{\small\@title}
+                \\ \textit{\@title}
             \fi
        \end{tabular}
     } & {
         \begin{tabular}[c]{l@{\hspace{1em}}l}
-            \entry{\small#4}{\small#1}
-            \entry{\small#5}{\small#2}
-            \entry{\small#6}{\small#3}
+            \small#1 \tabularnewline
+            \small#2 \tabularnewline
+            \small#3 \tabularnewline
+            \small#4 \tabularnewline
         \end{tabular}
     }
     \end{tabularx}
