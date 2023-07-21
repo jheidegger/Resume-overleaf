@@ -131,9 +131,9 @@
 \renewenvironment{section}[1]{
     \phantomsection
     \addcontentsline{toc}{section}{#1}
-    \medskip
+    \smallskip
     {\color{navyblue}{\textbf{\textit{#1}}}}
-    \medskip
+    \smallskip
     {\color{navyblue}\hrule}
     \begin{list}{}{
         \setlength{\leftmargin}{1.5em}
@@ -165,10 +165,10 @@
 % Define command for resume subsections with no bullets
 % All arguments are compulsory
 % #1: Name, #2: Description, #3: Time Period, #4: Location
-\newenvironment{subsectionnobullet}[4]{
+\newenvironment{subsectionnobullet}[5]{
     \phantomsection
     \addcontentsline{toc}{subsection}{#1}
-    \textbf{#1} | \textit{#2}  \hfill #3 | \textit{#4}
+    \textbf{#1} | \textit{#2}  \hfill #3 | \textit{#4} | \textit{#5}
     \smallskip
     \begin{list}{}{
         \leftmargin=1em \itemindent=0em \labelwidth=0em \labelsep=0em \rightmargin=8em
